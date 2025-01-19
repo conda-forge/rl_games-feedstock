@@ -17,14 +17,14 @@ build:
   script:
     - rm poetry.lock pyproject.toml
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >3.7
+    - python >={{ python_min }}
     - gym >=0.17.2
     - tensorboard >=1.14.0
     - tensorboardx >=1.6
@@ -44,6 +44,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Denys88/rl_games
