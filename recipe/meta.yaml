@@ -1,5 +1,5 @@
 {% set name = "rl_games" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Denys88/rl_games/archive/v{{ version }}.tar.gz
-  sha256: f70429cb4c75972365362186dc7b33d90b67e543fc770b272bb812b914f44e5a
+  sha256: dca1fe2e7333995a2b7f39d8966975795ab8bec8c9bad80edc0fa7eaaa1e2dfe
   patches:
     - 01-exclude_package_data.patch
     - 02-remove_watchdog_upper_bound.patch
@@ -17,7 +17,7 @@ build:
   script:
     - rm poetry.lock pyproject.toml
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
