@@ -10,7 +10,6 @@ source:
   sha256: dca1fe2e7333995a2b7f39d8966975795ab8bec8c9bad80edc0fa7eaaa1e2dfe
   patches:
     - 01-exclude_package_data.patch
-    - 02-remove_watchdog_upper_bound.patch
 
 build:
   noarch: python
@@ -25,16 +24,16 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - gym >=0.17.2
+    - gymnasium >=0.29.1
     - tensorboard >=1.14.0
     - tensorboardx >=1.6
     - pyyaml
     - psutil
     - setproctitle
-    - opencv
+    - py-opencv
     - wandb
-    - pytorch
-    - numpy
+    - pytorch >=2.2.2
+    - numpy >=1.16.0
     - watchdog >=2.19
 
 test:
