@@ -1,22 +1,16 @@
 diff --git a/setup.py b/setup.py
+index 8d6f14d..9f2ddcf 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -17,8 +17,7 @@ setup(name='rl-games',
-       long_description_content_type="text/markdown",
-       url="https://github.com/Denys88/rl_games",
-       #packages=[package for package in find_packages() if package.startswith('rl_games')],
--      packages = ['.','rl_games','docs'],
--      package_data={'rl_games':['*','*/*','*/*/*'],'docs':['*','*/*','*/*/*'],},
-+      packages = ['.','rl_games'],
-       version='1.6.1',
-       author='Denys Makoviichuk, Viktor Makoviichuk',
-       author_email='trrrrr97@gmail.com, victor.makoviychuk@gmail.com',
-@@ -32,7 +31,7 @@ setup(name='rl-games',
-             "Programming Language :: Python :: 3.10"
+@@ -28,10 +28,9 @@ setup(name='rl-games',
+             "Programming Language :: Python :: 3.13"
        ],
-       #packages=["rlg"],
+       packages=find_packages(include=["rl_games", "rl_games.*"]),
 -      include_package_data=True,
 +      include_package_data=False,
+       package_data={
+             "rl_games": ["*.py", "**/*.py"],
+-            "docs": ["*.md", "*.rst"],
+       },
        install_requires=[
-             # this setup is only for pytorch
-             # 
+             # Gym legacy for Isaac‑Gym
